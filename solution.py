@@ -1,13 +1,11 @@
-#! /usr/bin/env python3
+# ! /usr/bin/env python3
 
 from nacl.secret import SecretBox
 from nacl.exceptions import CryptoError
 import sys
 import json
-with open(sys.argv[1]) as json_data:
-    inputs = json.load(json_data)
 
-
+inputs = json.load(sys.stdin)
 outputs = {}
 
 # Problem 1
@@ -20,8 +18,6 @@ outputs["problem1"] = {
     "sum": ints_sum,
     "product": ints_product,
 }
-
-
 
 # Output
 #
