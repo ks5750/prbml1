@@ -5,7 +5,9 @@ from nacl.exceptions import CryptoError
 import sys
 import json
 
-inputs = json.load(sys.stdin)
+with open(sys.argv[1]) as json_data:
+    inputs = json.load(json_data)
+
 outputs = {}
 
 # Problem 1
@@ -18,6 +20,15 @@ outputs["problem1"] = {
     "sum": ints_sum,
     "product": ints_product,
 }
+
+# Problem 2
+
+input_hexstr=inputs["problem2"]
+output_byte=bytes.fromhex(input_hexstr)
+
+output_str=output_byte.decode()
+outputs["problem2"]= output_str
+
 
 # Output
 #
